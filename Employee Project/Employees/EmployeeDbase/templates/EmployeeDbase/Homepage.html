@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+</head>
+<body>
+
+    {% include 'mainnav.html' %}
+
+    <h3 style="text-align: center; font-size: larger; font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;">Welcome to Employee Database list</h3>
+
+    <div style="text-align: center; margin: auto; width: 50%;">
+        <table style="text-align: center; border: 1px solid black; border-radius: 5px;">
+            <thead>
+                <th>Employee Name</th>
+                <th>Employee ID</th>
+                <th>Designation</th>
+                <th>Total Experience(years)</th>
+                <th>View Details</th>
+            </thead>
+            {% for employee in employee_datas %}
+    
+                <tr>
+                    <td >{{employee.name}}</td>
+                    <td>{{employee.employee_id}}</td>
+                    <td>{{employee.designation}}</td>
+                    <td>{{employee.total_experience}}</td>
+                    <td><a href="{% url 'Employee' employee.name %}">View</a></td>
+                </tr>
+    
+            {% endfor %}
+        </table>
+    </div>
+    
+</body>
+</html>
+
+
