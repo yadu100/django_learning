@@ -1,5 +1,12 @@
 15/07/2024
 
 Added sample project Employee Database
-utilises Django and python
+	# utilises Django and python
+
+18/07/2024
+
+Added CRUD functionalities to the Employee Database Project
+	# added add employee functionality - Create
+	# added delete employee functionality - Delete
+	# added update employee functionality - Update
 

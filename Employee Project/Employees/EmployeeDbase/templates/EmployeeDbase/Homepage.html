@@ -11,6 +11,15 @@
 
     <h3 style="text-align: center; font-size: larger; font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;">Welcome to Employee Database list</h3>
 
+    <hr>
+    <hr>
+
+    <a href="{% url 'add-employee' %}"><button>Add New Employee</button></a>
+
+    <hr>
+    <hr>
+    
+
     <div style="text-align: center; margin: auto; width: 50%;">
         <table style="text-align: center; border: 1px solid black; border-radius: 5px;">
             <thead>
@@ -19,6 +28,7 @@
                 <th>Designation</th>
                 <th>Total Experience(years)</th>
                 <th>View Details</th>
+                <th>Actions</th>
             </thead>
             {% for employee in employee_datas %}
     
@@ -27,7 +37,12 @@
                     <td>{{employee.employee_id}}</td>
                     <td>{{employee.designation}}</td>
                     <td>{{employee.total_experience}}</td>
-                    <td><a href="{% url 'Employee' employee.name %}">View</a></td>
+                    <td><a href="{% url 'Employee' employee.name %}"><button>View</button></a></td>
+                    <td><ul>
+                        <li><a href="{% url 'update-employee' employee.name %}"><button>Update</button></a></li>
+                        <br>
+                        <li><a href="{% url 'delete-employee' employee.name %}"><button>Delete</button></a></li>
+                    </ul></td>
                 </tr>
     
             {% endfor %}
