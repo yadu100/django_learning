@@ -4,44 +4,51 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Employee</title>
+
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'styles/ind_employee.css' %}">
 </head>
 <body>
     {% include 'mainnav.html' %}
 
-    <h2 style="text-align: center; font-family: Verdana, Geneva, Tahoma, sans-serif;">{{employee_data.name}}'s Profile</h2>
+    <h2>{{employee_data.name}}'s Profile</h2>
+    <h3 >Details </h3>
+
     
-    <h3 style="font-size: large; font-family: 'Times New Roman', Times, serif;">Details : </h3>
+    <div>
 
-    <ol style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">
-        <li>Name        : {{employee_data.name}}</li>
-        <li>Employee ID : {{employee_data.employee_id}}</li>
-        <li>Designation : {{employee_data.designation}}</li>
-        <li>Department  : {{employee_data.department}}</li>
-        <li>Salary      : {{employee_data.salaryLPA}} LPA</li>
-        <li>Total Exp   : {{employee_data.total_experience}} years</li>
-        <li>Skill set   :
-            <ul>
-                {% for  skill in employee_data.skillset.all %}
-
-                <li>{{skill.Programming_language}}</li>
-
-                {% endfor %}
-            </ul>
-        </li>
-        <li>Reviews     :
-            <ul>
-                
-                {% for review in employee_data.employeereview_set.all %}
-
-                <li>{{review.review_text}}</li>
-
-
-                {% endfor %}
-
-            </ul>
-        </li>
-
-
-    </ol>
+        <ol style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">
+            <li><img src={{employee_data.profile_img.url}} alt={{employee_data.name}}_profile_img width="200px" height="200px"></li>
+            <li>Name        : {{employee_data.name}}</li>
+            <li>Employee ID : {{employee_data.employee_id}}</li>
+            <li>Designation : {{employee_data.designation}}</li>
+            <li>Department  : {{employee_data.department}}</li>
+            <li>Salary      : {{employee_data.salaryLPA}} LPA</li>
+            <li>Total Exp   : {{employee_data.total_experience}} years</li>
+            <li>Skill set   :
+                <ul>
+                    {% for  skill in employee_data.skillset.all %}
+    
+                    <li>{{skill.Programming_language}}</li>
+    
+                    {% endfor %}
+                </ul>
+            </li>
+            <li>Reviews     :
+                <ul>
+                    
+                    {% for review in employee_data.employeereview_set.all %}
+    
+                    <li>{{review.review_text}}</li>
+    
+    
+                    {% endfor %}
+    
+                </ul>
+            </li>
+    
+    
+        </ol>
+    </div>
 </body>
 </html>

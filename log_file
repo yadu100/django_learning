@@ -10,3 +10,10 @@ Added CRUD functionalities to the Employee Database Project
 	# added delete employee functionality - Delete
 	# added update employee functionality - Update
 
+
+18/07/2024
+Added static - stylesheet and images and 2 way connections to database
+	# added static folder containing styles folder and images folder
+	# added all styles form individual html files
+	# added all images 
+	# added 2 way connection between database and website

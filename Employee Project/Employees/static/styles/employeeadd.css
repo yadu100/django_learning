@@ -1,0 +1,52 @@
+.employeeform{
+    border: 2px solid black;
+    text-align: center;
+
+
+
+}
+h1{
+    color: cadetblue;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+form{
+    font-size: x-large;
+}
+
+input{
+    background-color: lightblue;
+    font-size: large;
+    margin: 10px;
+    padding: 10px;
+    width: 55%;
+}
+label{
+    font-weight: bold;
+    margin: 10px;
+    padding: 10px;
+}
+
+button{
+    text-align: center;
+    font-size: larger;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-weight: bold;
+    background-color: lightblue;
+    border-color: lightblue;
+    border-radius: 5px;
+}
+
+
+
+button:hover{
+    text-align: center;
+    font-size: larger;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-weight: bold;
+    background-color: rgb(4, 95, 125);
+    border-color: lightblue;
+    border-radius: 5px;
+    color: white;
+
+}
