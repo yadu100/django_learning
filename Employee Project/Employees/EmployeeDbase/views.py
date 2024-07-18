@@ -19,7 +19,7 @@ def callEmployeeAdditionPage(request):
 
     #adding functionality
     if request.method=='POST':
-        employeeform = EmployeeForm(request.POST)
+        employeeform = EmployeeForm(request.POST, request.FILES)
         if employeeform.is_valid():
             employeeform.save()
             return redirect('Home')
@@ -30,7 +30,7 @@ def callEmployeeUpdateForm(request,name):
     employee = EmployeeDatabase.objects.get(name=name)
     employeeform = EmployeeForm(instance=employee)
     if request.method=='POST':
-        employeeform = EmployeeForm(request.POST,instance=employee)
+        employeeform = EmployeeForm(request.POST, request.FILES,instance=employee)
         employeeform.save()
         return redirect('Home')
     return render(request, 'EmployeeDbase/Employee_update_form.html', {'form':employeeform})

@@ -4,12 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home</title>
+
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'styles/Homepage.css' %}">
 </head>
 <body>
 
     {% include 'mainnav.html' %}
 
-    <h3 style="text-align: center; font-size: larger; font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;">Welcome to Employee Database list</h3>
+    <h3 >Welcome to Employee Database list</h3>
 
     <hr>
     <hr>

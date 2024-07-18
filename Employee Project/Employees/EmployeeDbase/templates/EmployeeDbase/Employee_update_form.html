@@ -4,17 +4,27 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Employee Update Form</title>
+
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'styles/employeeupdate.css' %}">
 </head>
 <body>
 
-    <h1 style="text-align: center;">EMPLOYEE UPDATE FORM</h1>
+    <div>
+        <h1 >EMPLOYEE UPDATE FORM</h1>
 
-    <form action="" method="post">
-        {% csrf_token %}
-        {{form}}
-
-        <input type="submit" value="Update Employee">
-    </form>
+        <form action="" method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            {{form}}
+            <br>
+            <br>
+            <br>
+            <button type="submit">Update Employee</button>
+    
+        </form>
+        <br>
+        <br>
+    </div>
     
 </body>
 </html>

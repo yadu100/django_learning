@@ -19,6 +19,8 @@ class EmployeeDatabase(models.Model):
         ('4',"more than 3 years")
     )
 
+    profile_img = models.ImageField(null=True, blank=True, default='employee_logo.jpg')
+
     total_experience = models.CharField(max_length=30,choices=experience_tuple,null=True)
 
     skillset = models.ManyToManyField('SkillSet')

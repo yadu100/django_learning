@@ -4,19 +4,27 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Employee Delete Form</title>
+
+    {% load static %}
+
+    <link rel="stylesheet" href="{% static 'styles/employeedelete.css' %}">
 </head>
 <body>
     <h1>EMPLOYEE REMOVAL PAGE</h1>
+    <div>
 
-    <form action="" method="post">
 
-        {% csrf_token %}
+        <form action="" method="post">
+    
+            {% csrf_token %}
+    
+            <h3>Are you sure you want to delete {{employee}}'s entry</h3>
+    
+            <button type="submit">Yes, Delete</button>
+        </form>
+        <a href="{% url 'Home' %}"><button>No Go back</button></a>
+    </div>
 
-        <h3>Are you sure you want to delete {{employee}}'s entry</h3>
-
-        <input type="submit" value="Yes,Delete">
-    </form>
-    <a href="{% url 'Home' %}"><button>No Go back</button></a>
     
 </body>
 </html>

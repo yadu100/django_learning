@@ -4,21 +4,31 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Employee Addition Form</title>
+
+    {% load static %}
+    <link rel="stylesheet" href="{%  static 'styles/employeeadd.css' %}">
 </head>
 <body>
 
 
-    <div class="employeeform" style="margin: auto; width: 50%; border: 1px solid black;">
-        <h2 style="text-align: center;">This is the EMployee Addition Page</h2>
+    <div class="employeeform">
+        <h1>EMPLOYEE ADDITION PAGE</h1>
 
         
-        <form action="" method="post" >
+        <form action="" method="post" enctype="multipart/form-data">
             {% csrf_token %}
+            <br>
 
             {{form}}
+            <br>
+            <br>
     
-            <input type="submit" value="Add Employee" style="margin: auto; width: 50%; border: 1px solid black;">
+            <button type="submit">Add Employee</button>
         </form>
+        <br>
+        <br>
+        <br>
+        
     </div>
     
 </body>
