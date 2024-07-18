@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Update Form</title>
+</head>
+<body>
+
+    <h1 style="text-align: center;">EMPLOYEE UPDATE FORM</h1>
+
+    <form action="" method="post">
+        {% csrf_token %}
+        {{form}}
+
+        <input type="submit" value="Update Employee">
+    </form>
+    
+</body>
+</html>
