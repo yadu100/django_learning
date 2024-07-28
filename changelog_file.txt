@@ -17,3 +17,10 @@ Added static - stylesheet and images and 2 way connections to database
 	# added all styles form individual html files
 	# added all images 
 	# added 2 way connection between database and website
+
+28/07/2024
+Added signals and bootstrap style sheets
+	# added signals file for django form signalling
+	# integrated bootstrap 4 with all html files
+	# integrated bootstrap 4 with django forms using widgets
+	# enchanced UI of website
