@@ -24,3 +24,11 @@ Added signals and bootstrap style sheets
 	# integrated bootstrap 4 with all html files
 	# integrated bootstrap 4 with django forms using widgets
 	# enchanced UI of website
+
+
+28/07/2024
+Implementing crispy bootstrap 
+	# added django-crispy-forms and crispy-boostrap4
+	# made changes in settings.py installed apps and in required html by loading crispy_forms_tags
+	# made use of bootstrap.min.css from bootswatch and added link in href of stylesheet link
+	# done only for employee update form
