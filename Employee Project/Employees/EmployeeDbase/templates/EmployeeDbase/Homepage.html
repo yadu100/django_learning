@@ -6,26 +6,30 @@
     <title>Home</title>
 
     {% load static %}
-    <link rel="stylesheet" href="{% static 'styles/Homepage.css' %}">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+    
 </head>
 <body>
 
+   
+
     {% include 'mainnav.html' %}
 
-    <h3 >Welcome to Employee Database list</h3>
+    <h3 class="display-4 text-center font-weight-bold" >Welcome to Employee Database list</h3>
 
     <hr>
     <hr>
 
-    <a href="{% url 'add-employee' %}"><button>Add New Employee</button></a>
+    <a class="btn btn-success btn-block text-center w-75 m-auto" href="{% url 'add-employee' %}">Add New Employee</a>
 
     <hr>
     <hr>
+
+    <div class="container">
     
 
-    <div style="text-align: center; margin: auto; width: 50%;">
-        <table style="text-align: center; border: 1px solid black; border-radius: 5px;">
-            <thead>
+        <table class="table table-striped table-bordered" >
+            <thead class="thead-dark text-white">
                 <th>Employee Name</th>
                 <th>Employee ID</th>
                 <th>Designation</th>
@@ -40,17 +44,23 @@
                     <td>{{employee.employee_id}}</td>
                     <td>{{employee.designation}}</td>
                     <td>{{employee.total_experience}}</td>
-                    <td><a href="{% url 'Employee' employee.name %}"><button>View</button></a></td>
-                    <td><ul>
-                        <li><a href="{% url 'update-employee' employee.name %}"><button>Update</button></a></li>
-                        <br>
-                        <li><a href="{% url 'delete-employee' employee.name %}"><button>Delete</button></a></li>
-                    </ul></td>
+                    <td><a class="d-inline btn btn-info text-center" href="{% url 'Employee' employee.name %}">View</a></td>
+                    <td>
+                        <a class="d-inline btn btn-outline-primary" href="{% url 'update-employee' employee.name %}">Update</a>
+                        <a class="d-inline btn btn-outline-secondary" href="{% url 'delete-employee' employee.name %}">Delete</a>
+                    </td>
                 </tr>
     
             {% endfor %}
         </table>
+
     </div>
+    
+
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js" integrity="sha384-+sLIOodYLS7CIrQpBjl+C7nPvqq+FbNUBDunl/OZv93DB7Ln/533i8e/mZXLi/P+" crossorigin="anonymous"></script>
+        
     
 </body>
 </html>

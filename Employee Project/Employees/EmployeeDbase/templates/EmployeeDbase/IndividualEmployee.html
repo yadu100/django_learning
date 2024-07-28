@@ -5,50 +5,69 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Employee</title>
 
-    {% load static %}
-    <link rel="stylesheet" href="{% static 'styles/ind_employee.css' %}">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+
 </head>
 <body>
     {% include 'mainnav.html' %}
 
-    <h2>{{employee_data.name}}'s Profile</h2>
-    <h3 >Details </h3>
+<div class="container my-5 ">
+
+
 
     
-    <div>
+    <div class="row mt-5  ">
+        <div class="  col-md-3 text-center my-5 p-5 border border-secondary rounded bg-secondary text-white container">
+            <img class="rounded-pill text-center my-5" src={{employee_data.profile_img.url}} alt={{employee_data.name}}_profile_img width="200px" height="200px"></li>
+            <p class="lead my-3  font-weight-bold ">{{employee_data.name}}</p>
+            <p class="lead my-3  font-weight-bold ">{{employee_data.employee_id}}</p>
+            <p class="small my-3  font-weight-bold ">{{employee_data.designation}}</p>
+        </div>
 
-        <ol style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">
-            <li><img src={{employee_data.profile_img.url}} alt={{employee_data.name}}_profile_img width="200px" height="200px"></li>
-            <li>Name        : {{employee_data.name}}</li>
-            <li>Employee ID : {{employee_data.employee_id}}</li>
-            <li>Designation : {{employee_data.designation}}</li>
-            <li>Department  : {{employee_data.department}}</li>
-            <li>Salary      : {{employee_data.salaryLPA}} LPA</li>
-            <li>Total Exp   : {{employee_data.total_experience}} years</li>
-            <li>Skill set   :
-                <ul>
+        <div class="col-md-9 text-left container p-5">
+            <p class="display-4">Department</p>
+            <p class="lead font-weight-bold mb-5">{{employee_data.department}} Department</p>
+
+            <p class="display-4">Salary</p>
+            <p class="lead font-weight-bold mb-5">{{employee_data.salaryLPA}} LPA</p>
+
+            <p class="display-4">Total Experience</p>
+            <p class="lead font-weight-bold mb-5">{{employee_data.total_experience}} years</p>
+
+            <p class="display-4">Skill Set</p>
+            <div class="row mb-5">
+
                     {% for  skill in employee_data.skillset.all %}
     
-                    <li>{{skill.Programming_language}}</li>
+                    <p class="d-inline border rounded-pill w-25 text-center text-dark mx-3 bg-light font-weight-bold">{{skill.Programming_language}}</p>
     
                     {% endfor %}
-                </ul>
-            </li>
-            <li>Reviews     :
-                <ul>
+
+                </div>
+                
+
+            <p class="display-4">Reviews</p>
+                
                     
                     {% for review in employee_data.employeereview_set.all %}
     
-                    <li>{{review.review_text}}</li>
+                    <p class="lead font-weight-bold">{{review.review_text}}</p>
     
     
                     {% endfor %}
     
-                </ul>
+                
             </li>
     
     
         </ol>
     </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js" integrity="sha384-+sLIOodYLS7CIrQpBjl+C7nPvqq+FbNUBDunl/OZv93DB7Ln/533i8e/mZXLi/P+" crossorigin="anonymous"></script>
+    
 </body>
 </html>
