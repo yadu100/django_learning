@@ -12,6 +12,10 @@ pip install django
 
 pip install pillow
 
+pip install django-crispy-forms
+
+pip install crispy-boostrap4
+
 Activate virtual env
 
 django_env\Scripts\activate
