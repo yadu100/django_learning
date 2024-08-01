@@ -13,7 +13,11 @@ urlpatterns = [
     path('update-employee/<str:name>', views.callEmployeeUpdateForm, name="update-employee"),
     path('delete-employee/<str:name>',views.callEmployeeDeleteForm, name='delete-employee'),
 
+    path('login/', views.loginUser, name="login"),
 
+    path('logout/', views.logoutUser, name="logout"),
+
+    path('register/', views.registerUser, name="register"),
     
 ]
 
