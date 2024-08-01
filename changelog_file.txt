@@ -32,3 +32,8 @@ Implementing crispy bootstrap
 	# made changes in settings.py installed apps and in required html by loading crispy_forms_tags
 	# made use of bootstrap.min.css from bootswatch and added link in href of stylesheet link
 	# done only for employee update form
+
+31/07/2024
+Added Login and Register
+	#added login and register functionalities in the project.
+	#used authenticate and login imports and usercreationform to do this

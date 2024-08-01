@@ -2,6 +2,9 @@ from django.forms import ModelForm
 from .models import EmployeeDatabase
 from django import forms
 
+from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth.models import User
+
 class EmployeeForm(ModelForm):
     class Meta:
         model = EmployeeDatabase
@@ -19,3 +22,8 @@ class EmployeeForm(ModelForm):
             'skillset' : forms.SelectMultiple(attrs={'class':'form-control border-primary w-50 m-auto'}),                                         
                                                      
         }
+
+class CustomUserCreationForm(UserCreationForm):
+    class Meta:
+        model = User
+        fields = ['username', 'first_name','last_name','email']
