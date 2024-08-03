@@ -37,3 +37,8 @@ Implementing crispy bootstrap
 Added Login and Register
 	#added login and register functionalities in the project.
 	#used authenticate and login imports and usercreationform to do this
+
+
+03/08/2024
+Added Search and Pagination
+	#Implemented search and pagination in website
