@@ -37,6 +37,9 @@ class EmployeeDatabase(models.Model):
 
     def __str__(self) -> str:
         return self.name
+    
+    class Meta:
+        ordering = ['created_timestamp']
 
 class SkillSet(models.Model):
     Programming_language = models.CharField(max_length=50)

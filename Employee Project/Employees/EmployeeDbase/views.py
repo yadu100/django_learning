@@ -11,12 +11,24 @@ from django.contrib import messages
 
 from .forms import EmployeeForm, CustomUserCreationForm
 
+from .utils import SerachItem, Paginate
+
+from django.core.paginator import Paginator, PageNotAnInteger, EmptyPage
+
 
 EmployeeDatabaseItem = EmployeeDatabase.objects.all()
 
 
 def callHomePage(request):
-    return render(request, 'EmployeeDbase/Homepage.html',{'employee_datas':EmployeeDatabaseItem})
+
+    EmployeeDatabaseItem, search_query = SerachItem(request)
+
+    EmployeeDatabaseItem, custom_range, paginator = Paginate(request, EmployeeDatabaseItem)
+
+    return render(request, 'EmployeeDbase/Homepage.html',
+                  {'employee_datas':EmployeeDatabaseItem, 'search_query':search_query, 'paginator':paginator, 'custom_range':custom_range})
+
+
 
 def callSingleEmployeePage(request,emp_name):
     search_employee = EmployeeDatabase.objects.get(name=emp_name)
