@@ -8,23 +8,25 @@ from django.conf import settings
 
 
 def signalEmployeeCreation(sender, instance, created, **kwargs):
+    User = instance
     if created:
-        User = instance
+        
+        print(User.email)
         new_employee = EmployeeDatabase.objects.create(
             name = User.first_name,
 
         )
 
-    # subject = "Registration Successful"
-    # body = "Hi, your registration is successful. welcome to employee database"
+    subject = "Registration Successful"
+    body = "Hi, your registration is successful. welcome to employee database"
 
-    # send_mail(
-    #     subject,
-    #     body,
-    #     settings.EMAIL_HOST_USER,
-    #     [User.email],
-    #     fail_silently=False
-    # )
+    send_mail(
+        subject,
+        body,
+        settings.EMAIL_HOST_USER,
+        [User.email],
+        fail_silently=False
+    )
     
 
 

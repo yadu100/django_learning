@@ -39,6 +39,8 @@
         <button type="submit" class="btn btn-primary">Log In</button>
     </form>
     <br>
+    <br><br>
+    <br><br><br>
     <p>Not a User. <a href="{% url 'register' %}"><strong class="text-decoration-none text-dark">Sign Up</strong></a></p>
 
     {% else %}
@@ -68,6 +70,8 @@
     <p>Already a user <a href="{% url 'login' %}"><strong class="text-decoration-none text-dark">Log In</strong></a></p>
 
     {% endif %}
+
+    <a href="{% url 'reset_password' %}">Forgot Password</a>
 
 </div>
 

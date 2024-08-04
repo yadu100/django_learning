@@ -16,7 +16,23 @@ from .utils import SerachItem, Paginate
 from django.core.paginator import Paginator, PageNotAnInteger, EmptyPage
 
 
+####### ----------------- Password reset imports  --------------------##############
+from django.contrib.auth.forms import PasswordChangeForm
+
+
 EmployeeDatabaseItem = EmployeeDatabase.objects.all()
+@login_required
+def changePassword(request):
+    form = PasswordChangeForm(request.user)
+    if request.method == "POST":
+        form = PasswordChangeForm(request.user, request.POST)
+        if form.is_valid():
+            print(request.POST)
+            form.save()
+            login(request,request.user)
+            return redirect('Home')
+
+    return render(request, 'EmployeeDbase/password_Reset.html',{'form':form})
 
 
 def callHomePage(request):
@@ -123,3 +139,5 @@ def registerUser(request):
             messages.error(request,"There was a problem registering User. Please try again")
 
     return render(request, 'EmployeeDbase/login.html',{'page':page,'form':form})
+
+
