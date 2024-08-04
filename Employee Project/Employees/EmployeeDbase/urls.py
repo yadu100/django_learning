@@ -6,6 +6,10 @@ from . import views
 from django.conf import settings
 from django.conf.urls.static import static
 
+
+
+
+
 urlpatterns = [
     path('', views.callHomePage, name="Home"),
     path('Employee/<str:emp_name>', views.callSingleEmployeePage, name="Employee"),
@@ -18,6 +22,12 @@ urlpatterns = [
     path('logout/', views.logoutUser, name="logout"),
 
     path('register/', views.registerUser, name="register"),
+
+    path('change-password/', views.changePassword, name='change-password'),
+
+
+    
+
     
 ]
 
