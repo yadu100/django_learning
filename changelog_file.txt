@@ -49,4 +49,5 @@ Added Search and Pagination
 Added Password Reset
 	#Implemented Password reset functionalities in the website
 	#brought in change password for already logged in user
+	#added send mail functionality
 	#brought in reset password connected to forgot password for logged out user
